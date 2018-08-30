@@ -15,3 +15,7 @@ Route::get('/', [
     'uses' => 'ProductController@getIndex',
     'as' => 'product.index'
 ]);
+
+Route::get('/signin', function () {
+    return view('signin');
+});
