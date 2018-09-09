@@ -15,7 +15,23 @@ Route::get('/', [
     'uses' => 'ProductController@getIndex',
     'as' => 'product.index'
 ]);
-
-Route::get('/signin', function () {
-    return view('signin');
-});
+Route::get('/signup', [
+    'uses' => 'UserController@getSignup',
+    'as' => 'user.signup'
+]);
+Route::post('/signup', [
+    'uses' => 'UserController@postSignup',
+    'as' => 'user.signup'
+]);
+Route::get('/signin', [
+    'uses' => 'UserController@getSignin',
+    'as' => 'user.signin'
+]);
+Route::post('/signin', [
+    'uses' => 'UserController@postSignin',
+    'as' => 'user.signin'
+]);
+Route::get('/user/signin', [
+    'uses' => 'UserController@getProfile',
+    'as' => 'user.profile'
+]);
